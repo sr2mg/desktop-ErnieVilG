@@ -1,6 +1,3 @@
-from copyreg import constructor
-from msilib.schema import Error
-import numpy as np
 import paddlehub as hub
 
 
@@ -21,6 +18,7 @@ class hub_adaptor:
 
     # returnでは配列でPILImageが返ってくる
     def get_image(self, prompt, style):
+        print("get image!")
         ret = self.__inference(prompt, style)
         if ret[0] != 'Success':
             raise ValueError(ret[0])

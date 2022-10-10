@@ -33,7 +33,6 @@ class DesktopErnie:
     def create_image(self, prompt, style, number_img):
         if(prompt == '' or style == ''):
             return
-        # 大受欢迎的二维动画角色，可爱女孩子，原神的新角色，金色头发少女，pixiv排名第一,纤细的双手
         self.window['generate'].update(disabled=True)
         tdatetime = dt.now()
         tstr = tdatetime.strftime('%Y%m%d%H_%M_%S')
@@ -70,7 +69,6 @@ class DesktopErnie:
             bio = io.BytesIO()
             sg_image.thumbnail([256, 256])
             sg_image.save(bio, format="PNG")
-            #self.frontend.update_imageLayout(idx, bio.getvalue())
 
     def cancel_tpe(self):
         for future in self.generate_futures:

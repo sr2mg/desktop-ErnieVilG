@@ -13,7 +13,6 @@ class images_creator:
     def get_image_list(self, number, prompt, style):  # create_image_listのスレッド管理
         set = int(-(-number//6))  # 切り上げで何回回せばいいかを決める
         for idx in range(set):
-            # submitすべきはextendではなくget_imageなのでは:thinking_face:
             self.generate_image_futures.append(
                 self.generate_images_tpe.submit(self.create_image_list, prompt, style))
         self.generate_images_tpe.shutdown()
